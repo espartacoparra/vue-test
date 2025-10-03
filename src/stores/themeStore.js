@@ -11,7 +11,7 @@ const isValidHexColor = (colorString) => {
 const defaultValues = {
   globalBgClass: 'background :#C0BFBC',
   globalTextClass: 'color :#3D3846',
-  contentTitleClassa: 'color :#613583',
+  contentTitleClass: 'color :#613583',
 }
 
 export const useThemeStore = defineStore('theme', () => {
