@@ -27,33 +27,71 @@
     </div>
 
     <nav class="flex flex-col space-y-2">
-      <a
-        v-for="item in navItems"
-        :key="item.name"
-        href="#"
-        :class="{
-          'bg-indigo-600 text-white shadow-md': item.active,
-          'hover:bg-gray-700 text-gray-300': !item.active,
-        }"
-        class="flex items-center space-x-3 p-3 rounded-lg font-medium transition duration-150"
-      >
-        <span class="text-xl">{{ item.icon }}</span>
-        <span>{{ item.name }}</span>
-      </a>
+      <template v-for="(item, index) in navItems" :key="index">
+        <RouterLink
+          :to="item.route"
+          :class="{
+            'bg-indigo-600 text-white shadow-md': item.active,
+            'hover:bg-gray-700 text-gray-300': !item.active,
+          }"
+          class="flex items-center space-x-3 p-3 rounded-lg font-medium transition duration-150"
+        >
+          <span class="text-xl">{{ item.icon }}</span>
+          <span>{{ item.name }}</span>
+        </RouterLink>
+      </template>
     </nav>
 
     <div class="mt-auto">
       <p class="text-xs text-gray-500 mt-4">v1.0.0</p>
     </div>
   </div>
-
-  <div
-    v-if="isOpen"
-    @click="closeSidebar"
-    class="fixed inset-0 bg-black opacity-50 z-20 md:hidden"
-  ></div>
 </template>
 
-<script setup></script>
+<script setup>
+import { defineEmits, computed, onMounted, onUnmounted, ref } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const emit = defineEmits(['close'])
+
+const siderOptions = [
+  { name: 'Dashboard', icon: '📊', active: true, route: '/' },
+  { name: 'Ajustes', icon: '⚙️', active: false, route: '/settings' },
+]
+const navItems = computed(() => {
+  return siderOptions.map((item) => {
+    item.active = item.route == route.path ? true : false
+    return item
+  })
+})
+
+const width = ref(window.innerWidth)
+const height = ref(window.innerHeight)
+
+function updateSize() {
+  width.value = window.innerWidth
+  height.value = window.innerHeight
+}
+
+const isOpen = computed(() => {
+  if (width.value < 750) {
+    return false
+  }
+  return true
+})
+
+onMounted(() => {
+  window.addEventListener('resize', updateSize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateSize)
+})
+
+const closeSidebar = () => {
+  emit('close')
+}
+</script>
 
 <style lang="scss" scoped></style>
