@@ -19,45 +19,54 @@ This template should help get you started developing with Vue 3 in Vite.
 
 See [Vite Configuration Reference](https://vite.dev/config/).
 
-## Estructura del proyecto
+## Project Structure
 
-Carpetas y archivos más relevantes:
+Most relevant folders and files:
 
-- index.html — entrada HTML.
-- src/main.js — punto de entrada de la app.
-- src/App.vue — componente raíz.
-- src/components/ — componentes Vue reutilizables (Header, Footer, Sidebar).
-- src/views/ — vistas/ páginas (Dashboard, Settings).
-- src/router/ — definición de rutas (Vue Router).
-- src/stores/ — stores de Pinia.
-- src/utils/ — utilidades (por ejemplo localStorage.js).
+- index.html — HTML entry point.
+- src/main.js — App entry point.
+- src/App.vue — Root component.
+- src/components/ — Reusable Vue components (Header, Footer, Sidebar).
+- src/views/ — Views/pages (Dashboard, Settings).
+- src/router/ — Route definitions (Vue Router).
+- src/stores/ — Pinia stores.
+- src/utils/ — Utilities (e.g., localStorage.js).
 
-## Desarrollo y recomendaciones
+## Environment Requirements
 
-- IDE: VS Code con la extensión oficial de Vue y configuración para ESLint + Prettier.
-- Devtools: instala Vue.js Devtools para depuración.
-- Formato y lint: ejecuta pnpm format y pnpm lint antes de hacer commits.
+### Node.js Version
+
+-To ensure compatibility and correct functioning of the build tools and project dependencies, the Node.js version must be greater than or equal to 20 (≥20).
+-It's recommended to use nvm (Node Version Manager) to easily manage and switch the Node.js version in your local environment.
 
 ## Project Setup
 
 ```sh
-pnpm install
+yarn install
+# o
+npm install
 ```
 
 ### Compile and Hot-Reload for Development
 
 ```sh
 pnpm dev
+# o
+npm run dev
 ```
 
 ### Compile and Minify for Production
 
 ```sh
 pnpm build
+# o
+npm run build
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
 pnpm lint
+# o
+npm run lint
 ```
