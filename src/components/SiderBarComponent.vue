@@ -41,10 +41,6 @@
         </RouterLink>
       </template>
     </nav>
-
-    <div class="mt-auto">
-      <p class="text-xs text-gray-500 mt-4">v1.0.0</p>
-    </div>
   </div>
 </template>
 

@@ -1,7 +1,5 @@
 <script setup>
-import FooterComponent from './components/FooterComponent.vue'
-import HeaderComponent from './components/HeaderComponent.vue'
-import SiderBarComponent from './components/SiderBarComponent.vue'
+import { FooterComponent, HeaderComponent, SiderBarComponent } from '@/components'
 import { storeToRefs } from 'pinia'
 import { useThemeStore } from './stores/themeStore'
 import { getLocalStore } from './utils/localStorage'

@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import DashboardView from '@/views/DashboardView.vue'
-import SettingsView from '@/views/SettingsView.vue'
+import { DashboardView, SettingsView } from '@/views/'
 const routes = [
   { path: '/', component: DashboardView },
   { path: '/settings', component: SettingsView },
