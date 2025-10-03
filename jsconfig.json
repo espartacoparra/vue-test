@@ -4,5 +4,7 @@
       "@/*": ["./src/*"]
     }
   },
-  "exclude": ["node_modules", "dist"]
+
+  "include": ["src/*/", "src/*/.vue", "src/*/.js", "src/*/.ts"],
+  "exclude": ["node_modules", "dist", "*/.js.map"]
 }

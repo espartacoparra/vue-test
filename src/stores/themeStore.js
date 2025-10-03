@@ -8,16 +8,14 @@ const isValidHexColor = (colorString) => {
   return hexRegex.test(colorString)
 }
 
-const defaultValues = {
-  globalBgClass: 'background :#C0BFBC',
-  globalTextClass: 'color :#3D3846',
-  contentTitleClass: 'color :#613583',
-}
+const DEFAULT_GLOBAL_BG_CLASS = 'background :#C0BFBC'
+const DEFAULT_GLOBAL_TEXT_CLASS = 'color :#3D3846'
+const DEFAULT_CONTENT_TITLE_CLASS = 'color :#613583'
 
 export const useThemeStore = defineStore('theme', () => {
-  const globalBgClass = ref(defaultValues.globalBgClass)
-  const globalTextClass = ref(defaultValues.globalTextClass)
-  const contentTitleClass = ref(defaultValues.contentTitleClass)
+  const globalBgClass = ref(DEFAULT_GLOBAL_BG_CLASS)
+  const globalTextClass = ref(DEFAULT_GLOBAL_TEXT_CLASS)
+  const contentTitleClass = ref(DEFAULT_CONTENT_TITLE_CLASS)
 
   const getGlobalBgClass = computed(() => globalBgClass.value)
   const getGlobalTextClass = computed(() => globalTextClass.value)
@@ -42,9 +40,9 @@ export const useThemeStore = defineStore('theme', () => {
   function init(data) {
     if (data) {
       const {
-        localGlobalBgClass = defaultValues.globalBgClass,
-        localGlobalTextClass = defaultValues.globalTextClass,
-        localContentTitleClass = defaultValues.contentTitleClass,
+        localGlobalBgClass = DEFAULT_GLOBAL_BG_CLASS,
+        localGlobalTextClass = DEFAULT_GLOBAL_TEXT_CLASS,
+        localContentTitleClass = DEFAULT_CONTENT_TITLE_CLASS,
       } = data
       globalBgClass.value = localGlobalBgClass
       globalTextClass.value = localGlobalTextClass
