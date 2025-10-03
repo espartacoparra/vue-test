@@ -19,6 +19,25 @@ This template should help get you started developing with Vue 3 in Vite.
 
 See [Vite Configuration Reference](https://vite.dev/config/).
 
+## Estructura del proyecto
+
+Carpetas y archivos más relevantes:
+
+- index.html — entrada HTML.
+- src/main.js — punto de entrada de la app.
+- src/App.vue — componente raíz.
+- src/components/ — componentes Vue reutilizables (Header, Footer, Sidebar).
+- src/views/ — vistas/ páginas (Dashboard, Settings).
+- src/router/ — definición de rutas (Vue Router).
+- src/stores/ — stores de Pinia.
+- src/utils/ — utilidades (por ejemplo localStorage.js).
+
+## Desarrollo y recomendaciones
+
+- IDE: VS Code con la extensión oficial de Vue y configuración para ESLint + Prettier.
+- Devtools: instala Vue.js Devtools para depuración.
+- Formato y lint: ejecuta pnpm format y pnpm lint antes de hacer commits.
+
 ## Project Setup
 
 ```sh
